@@ -1,6 +1,24 @@
 <ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <div class="list card">
+  <ion-content class="padding" has-bouncing="false">
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div class="slide">
+          <img src="/img/odometer.png" />
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slide">
+          <img src="/img/weekly.png" />
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="slide">
+          <img src="/img/monthly.png" />
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+<!--     <div class="list card">
       <div class="item item-divider">Recent Updates</div>
       <div class="item item-body">
         <div>
@@ -24,5 +42,5 @@
         </div>
       </div>
     </div>
-  </ion-content>
+ -->  </ion-content>
 </ion-view>

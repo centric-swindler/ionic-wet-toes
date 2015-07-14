@@ -3,22 +3,45 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<div>
+  <ui-select ng-model="vehicle.selected" theme="selectize" class="select-vehicle form-control" title="Choose a Vehicle" search-enabled="false">
+    <ui-select-match placeholder="Select a Vehicle..." ng-hide="($select.open)">
+      <img class="select-vehicle" src="{{$select.selected.imgsrc}}" />
+      <span>{{$select.selected.name}}</span>        
+    </ui-select-match>
+    <ui-select-choices repeat="item in vehicles">
+      <img class="select-vehicle" ng-src="{{item.imgsrc}}" />
+      <span class="select-vehicle" ng-bind-html="item.name"></span>
+    </ui-select-choices>
+  </ui-select>
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab>
+  <ion-tabs class="tabs-icon-top tabs-dark tabs-color-active-default">
 
-  <!-- Chats Tab -->
-  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
-  </ion-tab>
+    <!-- Dashboard Tab -->
+    <ion-tab title="Dashboard" icon-off="ion-arrow-graph-up-right" icon-on="ion-arrow-graph-up-right" href="#/tab/dash">
+      <ion-nav-view name="tab-dash"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
-  </ion-tab>
+    <!-- Maintenance Tab -->
+    <ion-tab title="Maintenance" icon-off="ion-settings" icon-on="ion-settings" href="#/tab/maintenance">
+      <ion-nav-view name="tab-maintenance"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Rewards/Offers Tab -->
+    <ion-tab title="Rewards" icon-off="ion-social-usd" icon-on="ion-social-usd" href="#/tab/rewards">
+      <ion-nav-view name="tab-rewards"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Feedback Tab -->
+    <ion-tab title="Feedback" icon-off="ion-ios-chatboxes" icon-on="ion-ios-chatboxes" href="#/tab/feedback">
+      <ion-nav-view name="tab-feedback"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Settings Tab -->
+    <ion-tab title="Settings" icon-off="ion-ios-gear" icon-on="ion-ios-gear" href="#/tab/settings">
+      <ion-nav-view name="tab-settings"></ion-nav-view>
+    </ion-tab>
 
 
-</ion-tabs>
+  </ion-tabs>
+</div>

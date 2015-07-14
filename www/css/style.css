@@ -1,1 +1,36 @@
 /* Empty. Add your own CSS if you like */
+.bar-header {
+    z-index: 999;
+}
+
+img.select-vehicle {
+    max-height: 48px;
+    max-width: 80px;
+    vertical-align: middle;
+}
+
+.slide {
+    height: 100%;
+    min-height: 100%;
+}
+
+.slide img {
+    max-width: 100%;
+}
+
+.ui-select-choices-row {
+    height: 60px;
+}
+
+.option.ui-select-choices-row-inner {
+    line-height: 60px;
+}
+
+.select-vehicle.ui-select-container {
+    top: 44px;
+    z-index: 100;
+}
+
+.select-vehicle .selectize-input {
+    height: 60px;
+}
